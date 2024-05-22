@@ -1,0 +1,27 @@
+
+
+.menuSection {
+    background-color: rgba(238, 237, 221, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    border-radius: 8px;
+}
+
+#menuTitle {
+    padding-top: 16px;
+    margin-bottom: 16px;
+    font-size: 48px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
