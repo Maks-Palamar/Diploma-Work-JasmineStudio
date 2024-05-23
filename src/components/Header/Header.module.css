@@ -39,7 +39,7 @@ header {
     transition: 500ms;
     left: 0;
     transform-origin: center;
-    fill: #fff;
+    fill: rgb(200, 199, 188);
 }
 
 .headerMenuIconOpen {
@@ -78,8 +78,8 @@ header {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 164px;
-    height: 40px;
+    width: 184px;
+    height: 60px;
     background-color: white;
         border: none;
         color: black;

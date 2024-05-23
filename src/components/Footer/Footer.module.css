@@ -1,0 +1,107 @@
+.footer {
+    padding: 64px 0;
+    background-color: rgb(200, 199, 188);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 114px;
+}
+
+.footerContent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 72px;
+}
+
+.footerTitle {
+    margin-bottom: 17.5px;
+    margin-right: 0;
+    display: flex;
+    text-transform: uppercase;
+    font-family: 'Dancing Script';
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    justify-content: center;
+    padding: 0;
+}
+
+.footerTitle > span {
+    color: rgb(238, 237, 221);
+}
+
+.footerText {
+    color: #F4F4FD;
+    width: 288px;
+    margin-bottom: 24px;
+    font-size: 20px;
+}
+
+.footerSocSection {
+    /*margin-right: 120px;*/
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 16px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footerSocTitle {
+    color: var(--WHITE, #FFF);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.footerSocList {
+    display: flex;
+    gap: 16px;
+}
+
+.footerSoc {
+    width: calc((100% - 24px * 3) / 4);
+    width: 40px;
+}
+
+.footerSocLink {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+    border-radius: 8px;
+    background: rgb(238, 237, 221);
+    flex-direction: row;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+
+
+}
+
+.footerSocLink:hover,
+.footerSocLink:focus,
+.footerSocLink:active {
+    background: white;
+
+}
+
+
+/* .footerSocIcon:hover,
+.footerSocIcon:focus,
+.footerSocIcon:active {
+    fill: black;
+} */
+
+
+
+.footerSocIcon {
+    fill: rgb(200, 199, 188);
+}

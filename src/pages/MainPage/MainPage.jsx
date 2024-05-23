@@ -7,6 +7,7 @@ import { getIsError, getIsLoading } from '../../redux/MainMenuSlice/MainMenuSlic
 import { useEffect } from 'react';
 import { fetchMenu } from '../../redux/MainMenuSlice/MainMenuOps';
 import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer';
 
 const MainPage = () => {
 
@@ -26,6 +27,7 @@ const MainPage = () => {
           <SearchBox />
           {isLoading && !error &&<h2>Loading...</h2>}
           <MenuList />
+          <Footer />
     </div>
   )
 }

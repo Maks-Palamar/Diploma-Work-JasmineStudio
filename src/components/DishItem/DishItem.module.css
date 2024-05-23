@@ -24,6 +24,7 @@
 
 .dishPrice {
     text-align: center;
+    font-size: 16px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -50,7 +51,7 @@
     border-bottom-left-radius: 0;
     border-top-right-radius: 0;
     font-family: 'Dancing Script';
-    font-size: 16px;
+    font-size: 20px;
 }
 
 /*-------*/

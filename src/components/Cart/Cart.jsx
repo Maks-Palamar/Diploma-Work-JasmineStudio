@@ -25,12 +25,14 @@ const Cart = () => {
                   <li key={dish.id} className={css.cartItem}>
                       <div className={css.dishNameWrap}>
                           <p className={css.cartDishName}>{dish.name}</p>
-                          <button type='button' onClick={() => handleRemove(dish)} className={css.cartRemoveBtn}>Remove</button>
-                          <button type='button' onClick={() => handleAdd(dish)} className={css.cartRemoveBtn}>Add</button>
+                          <div className={css.cartButtonsWrap}>
+                              <button type='button' onClick={() => handleRemove(dish)} className={css.cartRemoveBtn}>Remove</button>
+                              <button type='button' onClick={() => handleAdd(dish)} className={css.cartRemoveBtn}>Add</button>
+                          </div>
                       </div>
                       <div className={css.dishPriceWrap}>
-                          <p className={css.cartDishPrice}>{dish.price}</p>
-                          <p>x{dish.quantity}</p>
+                          <p className={css.cartDishPrice}>{dish.price}$</p>
+                          <p className={css.dishQuantity}>x{dish.quantity}</p>
                       </div>
                 </li>
               )}

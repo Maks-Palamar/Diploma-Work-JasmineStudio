@@ -74,7 +74,7 @@ h3 {
 
 p {
   /* Body */
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 1.5;
   /* 150% */
@@ -82,7 +82,7 @@ p {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 48px;
   margin-bottom: 16px;
 }
 
@@ -91,7 +91,7 @@ h2 {
   text-align: center;
 
   /* Header 2 */
-  font-size: 26px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 1.11;
   /* 111.111% */
