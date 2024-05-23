@@ -10,14 +10,14 @@ header {
     color: #000;
     border-top-right-radius: 16px;
     border-top-left-radius: 16px;
-    z-index: 2;
+    z-index: 1000;
     transition: top 0.5s ease-in-out;
     /* overflow: hidden; */
 }
 
 .headerOpen {
     top: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .headerContainer {
