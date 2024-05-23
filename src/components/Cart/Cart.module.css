@@ -1,0 +1,28 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.cartItem {
+    display: flex;
+    align-items: center;
+    /* justify-content: left; */
+    text-align: left;
+    background-color: white;
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    padding: 8px;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cartDishWrap {
+    display: flex;
+    flex-direction: row;
+}

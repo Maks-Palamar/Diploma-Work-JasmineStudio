@@ -34,10 +34,8 @@ const Header = () => {
 
             <div className={css.headerOrdered}>
                 <h2>Your order:</h2>
-                <Cart />
-                <button type="button" className={css.clearBtn}>clear</button>
-                  <h2>Total price: <span className={css.totPrice}></span></h2>
-                <button type="submit" className={css.helloBtn}>Order</button>
+                  {cartDishes.length !== 0 ? <Cart /> : <p>Oooopsie! Seems your cart is empty</p>}
+                <button type="submit" className={css.orderBtn}>Order</button>
             </div>
         </div>
     </header>
