@@ -9,7 +9,12 @@ export const INITIAL_STATE = {
 	},
   search: {
 		name: ""
-	}
+  },
+  cart: {
+    items: [],
+    total: 0,
+    totalPrice: 0
+  }
 }
 
 const handlePending = (state) => {
@@ -34,6 +39,10 @@ export const dishesSlice = createSlice({
       })
       .addCase(fetchMenu.rejected, handleRejected)
     //-----------------------------------
+
+
+    //-----------------------------------
+
     //   .addCase(addContact.pending, handlePending)
     //   .addCase(addContact.fulfilled, (state, action) => {
     //     state.loading = false;

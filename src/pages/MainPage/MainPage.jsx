@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getIsError, getIsLoading } from '../../redux/MainMenuSlice/MainMenuSlice';
 import { useEffect } from 'react';
 import { fetchMenu } from '../../redux/MainMenuSlice/MainMenuOps';
+import Header from '../../components/Header/Header'
 
 const MainPage = () => {
 
@@ -19,7 +20,8 @@ const MainPage = () => {
     
 
   return (
-      <div>
+    <div>
+        <Header />
           <h1>MENU</h1>
           <SearchBox />
           {isLoading && !error &&<h2>Loading...</h2>}
