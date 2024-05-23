@@ -3,31 +3,33 @@ import { dishesReducer } from "./MainMenuSlice/MainMenuSlice";
 import { searchReducer } from "./MainMenuSlice/SearchMenuSlice";
 import { cartReducer } from "./CartSlice/CartSlice";
 
-// import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
-// import storage from 'redux-persist/lib/storage'
+import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
-// const persistConfig = {
-// 	key: 'root',
-// 	version: 1,
-// 	storage,
-// }
+const persistConfig = {
+	key: 'root',
+	version: 1,
+    storage,
+    // whitelist: ['search', 'cart'],
+}
 
-// const persistedReducer = persistReducer(persistConfig, contactsReducer)
+const persistedCartReducer = persistReducer(persistConfig, cartReducer)
+const persistedSearchReducer = persistReducer(persistConfig, searchReducer)
 
 export const store = configureStore({
     reducer: {
         dishes: dishesReducer,
-        search: searchReducer,
-        cart: cartReducer,
+        search: persistedSearchReducer,
+        cart: persistedCartReducer,
     },
-    // middleware: getDefaultMiddleware =>
-	// 	getDefaultMiddleware({
-	// 		serializableCheck: {
-	// 			ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-	// 		},
-	// 	}),
+    middleware: getDefaultMiddleware =>
+		getDefaultMiddleware({
+			serializableCheck: {
+				ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+			},
+		}),
 });
 
-// export const persistor = persistStore(store)
+export const persistor = persistStore(store)
 
 export default store
