@@ -12,11 +12,12 @@ header {
     border-top-left-radius: 16px;
     z-index: 2;
     transition: top 0.5s ease-in-out;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .headerOpen {
     top: 0;
+    overflow: hidden;
 }
 
 .headerContainer {
