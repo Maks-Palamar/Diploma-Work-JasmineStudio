@@ -2,13 +2,17 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectCart } from '../../redux/CartSlice/CartSlice'
 import { useDispatch } from 'react-redux'
-import { removeFromCart } from '../../redux/CartSlice/CartSlice'
+import { removeFromCart , addToCart } from '../../redux/CartSlice/CartSlice'
 import css from './Cart.module.css'
 
 const Cart = () => {
 
     const dispatch = useDispatch()
     const cartDishes = useSelector(selectCart)
+
+    const handleAdd = (dish) => {
+        dispatch( addToCart(dish) )
+    }
     
     const handleRemove = (dish) => {
         dispatch( removeFromCart({id: dish.id, price: dish.price} ) )
@@ -22,10 +26,11 @@ const Cart = () => {
                       <div className={css.dishNameWrap}>
                           <p className={css.cartDishName}>{dish.name}</p>
                           <button type='button' onClick={() => handleRemove(dish)} className={css.cartRemoveBtn}>Remove</button>
+                          <button type='button' onClick={() => handleAdd(dish)} className={css.cartRemoveBtn}>Add</button>
                       </div>
                       <div className={css.dishPriceWrap}>
                           <p className={css.cartDishPrice}>{dish.price}</p>
-                          <p>temp</p>
+                          <p>x{dish.quantity}</p>
                       </div>
                 </li>
               )}

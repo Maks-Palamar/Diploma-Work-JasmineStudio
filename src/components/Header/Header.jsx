@@ -29,7 +29,7 @@ const Header = () => {
                         <use xlinkHref='/symbol-defs.svg#icon-navigation-arrow-svgrepo-com' width="20" height="20"></use>
                     </svg>
                 </button>
-                  {cartDishes.length!==0 ? <p className={css.logo} >Total Price: {totalPrice} <span>$</span></p> : <a className={css.logo} href="./index.html">Jasmine<span>Studio</span></a>}
+                  {cartDishes.length!==0 ? <p className={css.logo} >Total Price: {(totalPrice).toFixed(2)} <span>$</span></p> : <a className={css.logo} href="./index.html">Jasmine<span>Studio</span></a>}
             </nav>
 
             <div className={css.headerOrdered}>
