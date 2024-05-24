@@ -37,6 +37,7 @@ const Cart = () => {
                 </li>
               )}
           </ul>
+          <button type="submit" className={css.orderBtn}>Order</button>
     </div>
   )
 }

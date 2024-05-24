@@ -35,7 +35,7 @@ const Header = () => {
             <div className={css.headerOrdered}>
                 <h2>Your order:</h2>
                   {cartDishes.length !== 0 ? <Cart /> : <p>Oooopsie! Seems your cart is empty</p>}
-                <button type="submit" className={css.orderBtn}>Order</button>
+                {/* <button type="submit" className={css.orderBtn}>Order</button> */}
             </div>
         </div>
     </header>

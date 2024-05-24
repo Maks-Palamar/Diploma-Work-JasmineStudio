@@ -13,19 +13,20 @@ header {
     border-top-left-radius: 16px;
     z-index: 1000;
     transition: top 0.5s ease-in-out;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .headerOpen {
     top: 0;
     /* height: 100vh; */
-    /* overflow: hidden; */
+    overflow-y: auto;
 }
 
 .headerContainer {
     position: relative;
     height: 100%;
     padding: 0;
+    overflow: auto;
 }
 
 .headerMenuBtn {
@@ -74,7 +75,7 @@ header {
     margin-top: 20px;
 }
 
-.orderBtn {
+/* .orderBtn {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -89,4 +90,4 @@ header {
 
    font-family: inherit;
    font-size: 24px;
-}
+} */

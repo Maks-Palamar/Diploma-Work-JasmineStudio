@@ -52,6 +52,13 @@
     border-top-right-radius: 0;
     font-family: 'Dancing Script';
     font-size: 20px;
+    transition: 0.5s ease;
+}
+
+.addButton:hover,
+.addButton:focus,
+.addButton:active {
+    background-color: white;
 }
 
 /*-------*/
