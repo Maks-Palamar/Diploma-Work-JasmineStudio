@@ -1,11 +1,12 @@
 import { createSlice} from "@reduxjs/toolkit";  
-import { fetchMenu, fetchCakes, fetchPastries, fetchColdDishes, fetchTarts, fetchDrinks } from "./MainMenuOps";
+import { fetchMenu, fetchCakes, fetchPastries, fetchColdDishes, fetchTarts, fetchDrinks, fetchOneDish } from "./MainMenuOps";
 
 export const INITIAL_STATE = {
   dishes: {
     items: [],
     loading: false,
     error: null,
+    dishDetails: {},
 	},
   search: {
 		name: ""
@@ -14,7 +15,10 @@ export const INITIAL_STATE = {
     items: [],
     total: 0,
     totalPrice: 0
-  }
+  },
+  // dishDetails: {
+  //   details: [],
+  // }
 }
 
 const handlePending = (state) => {
@@ -78,6 +82,14 @@ export const dishesSlice = createSlice({
         state.items = action.payload;
       })
       .addCase(fetchDrinks.rejected, handleRejected)
+    //-----------------------------------
+      .addCase(fetchOneDish.pending, handlePending)
+      .addCase(fetchOneDish.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.dishDetails = action.payload;
+      })
+      .addCase(fetchOneDish.rejected, handleRejected)
 
     //   .addCase(addContact.pending, handlePending)
     //   .addCase(addContact.fulfilled, (state, action) => {
@@ -99,6 +111,7 @@ export const dishesSlice = createSlice({
 });
 
 export const selectDishes = state => state.dishes.items;
+export const selectDishDetails = state => state.dishes.dishDetails;
 export const getIsError = state => state.dishes.error;
 export const getIsLoading = state => state.dishes.loading;
 

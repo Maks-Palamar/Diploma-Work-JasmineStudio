@@ -9,6 +9,7 @@ import { Route, Routes } from 'react-router-dom'
 import { Suspense, lazy } from 'react'
 import Loader from './components/Loader/Loader'
 import Footer from './components/Footer/Footer'
+import DishPage from './pages/DishPage/DishPage'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             {/* <Switch > */}
             <Route path="/category/:categoryName" element={<MainPage />} />
             <Route path="/" element={<MainPage />}/>
+            <Route path='/dishpage/:id' element={<DishPage />} />
             
               {/* <Route path="*" element={<NotFound/>}/> */}
             {/* </Switch> */}

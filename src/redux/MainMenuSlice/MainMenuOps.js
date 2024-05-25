@@ -79,3 +79,15 @@ export const fetchDrinks = createAsyncThunk('menu/fetchDrinks', async (_, thunkA
         return thunkAPI.rejectWithValue(error.message);
     }
 })
+
+export const fetchOneDish = createAsyncThunk('menu/fetchOneDish', async (dishId, thunkAPI) => {
+    console.log("dasdasd", dishId);
+    try {
+        const response = await instance.get(`/OurSweets/${dishId}`);
+        
+        console.log(response.data);
+        return response.data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+    }
+})
