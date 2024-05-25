@@ -16,9 +16,11 @@ export const INITIAL_STATE = {
     total: 0,
     totalPrice: 0
   },
-  // dishDetails: {
-  //   details: [],
-  // }
+  modal: {
+    isOpen: false,
+    item: {},
+
+  }
 }
 
 const handlePending = (state) => {
@@ -114,5 +116,8 @@ export const selectDishes = state => state.dishes.items;
 export const selectDishDetails = state => state.dishes.dishDetails;
 export const getIsError = state => state.dishes.error;
 export const getIsLoading = state => state.dishes.loading;
+
+export const selectModal = state => state.modal.item;
+export const selectModalOpen = state => state.modal.isOpen;
 
 export const dishesReducer = dishesSlice.reducer;

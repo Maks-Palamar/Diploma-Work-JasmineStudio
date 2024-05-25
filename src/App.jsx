@@ -8,11 +8,16 @@ import { Route, Routes } from 'react-router-dom'
 // import { Switch } from 'react-router-dom'
 import { Suspense, lazy } from 'react'
 import Loader from './components/Loader/Loader'
-import Footer from './components/Footer/Footer'
+// import Footer from './components/Footer/Footer'
 import DishPage from './pages/DishPage/DishPage'
+import Modal from './components/Modal/Modal'
+import { selectModalOpen } from './redux/MainMenuSlice/MainMenuSlice'
+import { useSelector } from 'react-redux'
 
 
 function App() {
+
+  const modalOpen = useSelector(selectModalOpen);
 
   return (
     <>
@@ -28,6 +33,7 @@ function App() {
             {/* </Switch> */}
         </Routes>
       </Suspense>
+      {modalOpen && <Modal />}
       {/* <Footer /> */}
     </>
   )

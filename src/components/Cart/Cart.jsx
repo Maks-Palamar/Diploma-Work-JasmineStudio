@@ -4,7 +4,8 @@ import { selectCart } from '../../redux/CartSlice/CartSlice'
 import { useDispatch } from 'react-redux'
 import { removeFromCart , addToCart } from '../../redux/CartSlice/CartSlice'
 import css from './Cart.module.css'
-import { getIsLoading} from '../../redux/MainMenuSlice/MainMenuSlice'
+import { getIsLoading } from '../../redux/MainMenuSlice/MainMenuSlice'
+import { modalOpen } from '../../redux/ModalSlice/ModalSlice'
 import Loader from '../Loader/Loader'
 
 const Cart = () => {
@@ -21,6 +22,10 @@ const Cart = () => {
     
     const handleRemove = (dish) => {
         dispatch( removeFromCart({id: dish.id, price: dish.price} ) )
+    }
+
+    const handleOrder = () => {
+        dispatch(modalOpen())
     }
 
   return (
@@ -43,7 +48,7 @@ const Cart = () => {
                       </li>
                   )}
               </ul>}
-          <button type="submit" className={css.orderBtn}>Order</button>
+          <button type="button" className={css.orderBtn} onClick={handleOrder}>Order</button>
     </div>
   )
 }
