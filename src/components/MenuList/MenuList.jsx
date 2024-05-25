@@ -4,9 +4,10 @@ import { selectFilteredDishes } from '../../redux/MainMenuSlice/SearchMenuSlice'
 import DishItem from '../DishItem/DishItem'
 import css from './MenuList.module.css'
 import { useDispatch } from 'react-redux'
-import { fetchCakes, fetchMenu } from '../../redux/MainMenuSlice/MainMenuOps'
+import { fetchCakes, fetchColdDishes, fetchMenu, fetchPastries, fetchTarts, fetchDrinks } from '../../redux/MainMenuSlice/MainMenuOps'
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
+import Filters from '../Filters/Filters'
 
 const MenuList = () => {
 
@@ -18,13 +19,23 @@ const MenuList = () => {
   useEffect(() => {
     if (categoryName === 'cakes') {
       dispatch(fetchCakes());
-    } else {
+    } else if (categoryName === 'pastries') {
+      dispatch(fetchPastries());
+    } else if (categoryName === 'cold-dishes') {
+      dispatch(fetchColdDishes());
+    } else if (categoryName === 'tarts') {
+      dispatch(fetchTarts());
+    } else if (categoryName === 'drinks') {
+      dispatch(fetchDrinks());
+    }
+    else {
       dispatch(fetchMenu());
     }
   }, [dispatch, categoryName]);
 
   return (
-      <div className={css.menuSection}>
+    <div className={css.menuSection}>
+      <Filters />
           <ul className={css.menu}>
               {filteredDishes && filteredDishes.map(dish => 
                 <li key={dish.id} ><DishItem data={dish}/></li>

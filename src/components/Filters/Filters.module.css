@@ -1,3 +1,36 @@
 .navLinkActive {
-    background-color: black;
+    background-color: rgb(238, 237, 221);
+    /* width: 100%; */
+}
+
+.navLink {
+    width: 100%;
+    padding: 8px;
+    font-size: 18px;
+    color: black;
+}
+
+.navList {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-bottom: 16px;
+}
+
+.linkItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100%/3);
+}
+
+.linkItem:nth-child(1) > .navLink {
+    border-top-left-radius: 8px;
+}
+
+.linkItem:nth-child(3) > .navLink {
+    border-top-right-radius: 8px;
 }

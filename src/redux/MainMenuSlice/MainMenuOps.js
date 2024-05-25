@@ -27,3 +27,55 @@ export const fetchCakes = createAsyncThunk('menu/fetchCakes', async (_, thunkAPI
         return thunkAPI.rejectWithValue(error.message);
     }
 });
+
+export const fetchPastries = createAsyncThunk('menu/fetchPastries', async (_, thunkAPI) => {
+    try {
+        const response = await instance.get('/OurSweets', {
+            params: {
+                type: 'pastries'
+            }
+        });
+        return response.data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+    }
+})
+
+export const fetchColdDishes = createAsyncThunk('menu/fetchColdDishes', async (_, thunkAPI) => {
+    try {
+        const response = await instance.get('/OurSweets', {
+            params: {
+                type: 'cold-dishes'
+            }
+        });
+        return response.data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+    }
+})
+
+export const fetchTarts = createAsyncThunk('menu/fetchTarts', async (_, thunkAPI) => {
+    try {
+        const response = await instance.get('/OurSweets', {
+            params: {
+                type: 'tarts'
+            }
+        });
+        return response.data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+    }
+})
+
+export const fetchDrinks = createAsyncThunk('menu/fetchDrinks', async (_, thunkAPI) => {
+    try {
+        const response = await instance.get('/OurSweets', {
+            params: {
+                type: 'drinks'
+            }
+        });
+        return response.data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+    }
+})

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getIsError, getIsLoading } from '../../redux/MainMenuSlice/MainMenuSlice';
 import { useEffect } from 'react';
 import { fetchMenu } from '../../redux/MainMenuSlice/MainMenuOps';
-import Filters from '../../components/Filters/Filters';
+// import Filters from '../../components/Filters/Filters';
 // import Header from '../../components/Header/Header'
 // import Footer from '../../components/Footer/Footer';
 
@@ -27,7 +27,7 @@ const MainPage = () => {
           <h1>MENU</h1>
           <SearchBox />
           {isLoading && !error &&<h2>Loading...</h2>}
-          <Filters />
+          {/* <Filters /> */}
           <MenuList />
           {/* <Footer /> */}
     </div>

@@ -1,6 +1,5 @@
 import { createSlice} from "@reduxjs/toolkit";  
-import { fetchMenu } from "./MainMenuOps";
-import { fetchCakes } from "./MainMenuOps";
+import { fetchMenu, fetchCakes, fetchPastries, fetchColdDishes, fetchTarts, fetchDrinks } from "./MainMenuOps";
 
 export const INITIAL_STATE = {
   dishes: {
@@ -47,8 +46,38 @@ export const dishesSlice = createSlice({
         state.items = action.payload;
       })
       .addCase(fetchCakes.rejected, handleRejected)
-
     //-----------------------------------
+      .addCase(fetchPastries.pending, handlePending)
+      .addCase(fetchPastries.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
+      .addCase(fetchPastries.rejected, handleRejected)
+    //-----------------------------------
+      .addCase(fetchColdDishes.pending, handlePending)
+      .addCase(fetchColdDishes.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
+      .addCase(fetchColdDishes.rejected, handleRejected)
+    //-----------------------------------
+      .addCase(fetchTarts.pending, handlePending)
+      .addCase(fetchTarts.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
+      .addCase(fetchTarts.rejected, handleRejected)
+    //-----------------------------------
+      .addCase(fetchDrinks.pending, handlePending)
+      .addCase(fetchDrinks.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
+      .addCase(fetchDrinks.rejected, handleRejected)
 
     //   .addCase(addContact.pending, handlePending)
     //   .addCase(addContact.fulfilled, (state, action) => {
