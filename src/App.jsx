@@ -28,7 +28,7 @@ function App() {
             {/* </Switch> */}
         </Routes>
       </Suspense>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

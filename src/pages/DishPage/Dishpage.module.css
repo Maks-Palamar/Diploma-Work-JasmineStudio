@@ -13,6 +13,7 @@
     align-items: center;
     overflow: hidden;
     background-size:auto;
+    background-repeat: no-repeat;
     background-position-y: center;
     transition: 1s ease-in-out;
 }
@@ -80,4 +81,96 @@
 .IconLeft{
     transform: rotate(180deg);
     /* transform-origin: center; */
+}
+
+.dishIngredients {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+}
+
+.ingridientsList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: capitalize;
+    background-color: rgba(238, 237, 221, 0.7);
+    width: calc(100%/2);
+    height: 100%;
+    font-size: 18px;
+    border-bottom-left-radius: 8px;
+}
+
+.ingridientsInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100%/2);
+    text-align: center;
+    flex-direction: column;
+    gap: 4px;
+    /* font-size: 24px; */
+}
+
+.ingridientsTitle {
+    font-size: 24px;
+}
+
+.ingridientsWeight {
+    font-size: 16px;
+}
+
+.pricing {
+        display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            height: 120px;
+}
+
+.dishPrice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    background-color: rgba(238, 237, 221, 0.7);
+        width: calc(100%/2);
+        height: 100%;
+        border-top-right-radius: 8px;
+}
+
+.cartAddRemove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    width: calc(100%/2);
+    height: 100%;
+    gap: 16px;
+    /* font-size: 24px; */
+}
+
+.cartRemoveBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 56px;
+    transition: 0.3s;
+    color: black;
+    font-family: 'Dance Script', cursive;
+}
+
+.cartRemoveBtn:hover,
+.cartRemoveBtn:active {
+    color: rgba(238, 237, 221, 0.7);
+}
+
+
+.dishQuantity {
+    font-size: 24px;
 }

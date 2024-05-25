@@ -13,7 +13,7 @@ const Filters = () => {
         <li className={css.linkItem}><NavLink to="/" className={link}>All</NavLink></li>
         <li className={css.linkItem}><NavLink to="/category/cakes" className={link}>Cakes</NavLink></li>
         <li className={css.linkItem}><NavLink to="/category/pastries" className={link}>Pastries</NavLink></li>
-        <li className={css.linkItem}><NavLink to="/category/cold-dishes" className={link}>Cold Dishes</NavLink></li>
+        <li className={css.linkItem}><NavLink to="/category/cold-dishes" className={link}>Coldies</NavLink></li>
         <li className={css.linkItem}><NavLink to="/category/tarts" className={link}>Tarts</NavLink></li>
         <li className={css.linkItem}><NavLink to="/category/drinks" className={link}>Drinks</NavLink></li>
         {/* <NavLink to="/category/category2">Category 2</NavLink> */}

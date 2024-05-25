@@ -8,28 +8,16 @@ import { useEffect } from 'react';
 import { fetchMenu } from '../../redux/MainMenuSlice/MainMenuOps';
 // import Filters from '../../components/Filters/Filters';
 // import Header from '../../components/Header/Header'
-// import Footer from '../../components/Footer/Footer';
+import Footer from '../../components/Footer/Footer';
 
 const MainPage = () => {
 
-  // const dispatch = useDispatch();
-  // const isLoading = useSelector(getIsLoading);
-  // const error = useSelector(getIsError);
-
-  // useEffect(() => {
-  //   dispatch(fetchMenu());
-  // }, [dispatch]);
-    
-
   return (
     <div>
-        {/* <Header /> */}
           <h1>MENU</h1>
           <SearchBox />
-          {/* {isLoading && !error &&<h2>Loading...</h2>} */}
-          {/* <Filters /> */}
           <MenuList />
-          {/* <Footer /> */}
+          <Footer />
     </div>
   )
 }

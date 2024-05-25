@@ -15,6 +15,7 @@ const Cart = () => {
     const isLoading = useSelector(getIsLoading);
 
     const handleAdd = (dish) => {
+        console.log('dish', dish);
         dispatch( addToCart(dish) )
     }
     

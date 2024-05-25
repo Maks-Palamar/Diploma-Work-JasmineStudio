@@ -32,13 +32,16 @@ const CartSlice = createSlice({
             if (existingItem) {
                 if (existingItem.quantity > 1) {
                     existingItem.quantity -= 1;
+                    state.total -= 1;
+                    state.totalPrice -= parseFloat(action.payload.price);
                 } else {
                     state.items = state.items.filter(item => item.id !== itemId);
+                    state.total -= 1;
+                    state.totalPrice -= parseFloat(existingItem.price);
                 }
             }
 
-            state.total -= 1;
-            state.totalPrice -= parseFloat(action.payload.price);
+            
         },
     }
 })
