@@ -14,3 +14,16 @@ export const fetchMenu = createAsyncThunk('menu/fetchAll', async (_, thunkAPI) =
         return thunkAPI.rejectWithValue(error.message);
     }
 });
+
+export const fetchCakes = createAsyncThunk('menu/fetchCakes', async (_, thunkAPI) => {
+    try {
+        const response = await instance.get('/OurSweets', {
+            params: {
+                type: 'cakes'
+            }
+        });
+        return response.data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+    }
+});

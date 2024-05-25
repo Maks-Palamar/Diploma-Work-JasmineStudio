@@ -1,5 +1,6 @@
 import { createSlice} from "@reduxjs/toolkit";  
 import { fetchMenu } from "./MainMenuOps";
+import { fetchCakes } from "./MainMenuOps";
 
 export const INITIAL_STATE = {
   dishes: {
@@ -39,7 +40,13 @@ export const dishesSlice = createSlice({
       })
       .addCase(fetchMenu.rejected, handleRejected)
     //-----------------------------------
-
+      .addCase(fetchCakes.pending, handlePending)
+      .addCase(fetchCakes.fulfilled, (state, action) => {
+        state.loading = false;
+        state.error = null;
+        state.items = action.payload;
+      })
+      .addCase(fetchCakes.rejected, handleRejected)
 
     //-----------------------------------
 
