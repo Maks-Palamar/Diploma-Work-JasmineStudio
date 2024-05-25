@@ -8,6 +8,8 @@ import { fetchCakes, fetchColdDishes, fetchMenu, fetchPastries, fetchTarts, fetc
 import { useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import Filters from '../Filters/Filters'
+import { getIsLoading} from '../../redux/MainMenuSlice/MainMenuSlice'
+import Loader from '../Loader/Loader'
 
 const MenuList = () => {
 
@@ -15,6 +17,9 @@ const MenuList = () => {
   
   const dispatch = useDispatch();
   const { categoryName } = useParams();
+
+  const isLoading = useSelector(getIsLoading);
+  // const error = useSelector(getIsError);
 
   useEffect(() => {
     if (categoryName === 'cakes') {
@@ -36,11 +41,12 @@ const MenuList = () => {
   return (
     <div className={css.menuSection}>
       <Filters />
-          <ul className={css.menu}>
-              {filteredDishes && filteredDishes.map(dish => 
-                <li key={dish.id} ><DishItem data={dish}/></li>
-              )}
-          </ul>
+      {isLoading ? <Loader /> :
+        <ul className={css.menu}>
+          {filteredDishes && filteredDishes.map(dish =>
+            <li key={dish.id} ><DishItem data={dish} /></li>
+          )}
+        </ul>}
     </div>
   )
 }

@@ -13,8 +13,8 @@ import { fetchMenu } from '../../redux/MainMenuSlice/MainMenuOps';
 const MainPage = () => {
 
   // const dispatch = useDispatch();
-  const isLoading = useSelector(getIsLoading);
-  const error = useSelector(getIsError);
+  // const isLoading = useSelector(getIsLoading);
+  // const error = useSelector(getIsError);
 
   // useEffect(() => {
   //   dispatch(fetchMenu());
@@ -26,7 +26,7 @@ const MainPage = () => {
         {/* <Header /> */}
           <h1>MENU</h1>
           <SearchBox />
-          {isLoading && !error &&<h2>Loading...</h2>}
+          {/* {isLoading && !error &&<h2>Loading...</h2>} */}
           {/* <Filters /> */}
           <MenuList />
           {/* <Footer /> */}

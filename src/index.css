@@ -62,7 +62,7 @@ p {
 }
 
 h3 {
-  color: var(--NAVY-BLUE, #2E2F42);
+  /* color: var(--NAVY-BLUE, #2E2F42); */
 
   /* Header 3 */
   font-size: 20px;
@@ -87,7 +87,7 @@ h1 {
 }
 
 h2 {
-  color: var(--NAVY-BLUE, #2E2F42);
+  /* color: var(--NAVY-BLUE, #2E2F42); */
   text-align: center;
 
   /* Header 2 */
