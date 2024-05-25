@@ -5,6 +5,7 @@ import { useLocation, useParams } from 'react-router-dom'
 import { selectDishDetails } from '../../redux/MainMenuSlice/MainMenuSlice'
 import { addToCart, removeFromCart } from '../../redux/CartSlice/CartSlice'
 import css from './Dishpage.module.css'
+import { NavLink } from 'react-router-dom'
 
 import { selectCart } from '../../redux/CartSlice/CartSlice'
 
@@ -58,6 +59,8 @@ const DishPage = () => {
   return (
       <div >
           <div className={`${css.dishHero} ${showDescription && css.heroImgRight}`} style={{ backgroundImage: `linear-gradient(rgba(238, 237, 221, 0.7), rgba(238, 237, 221, 0.7)), url("${dishDetails.image}")` }}>
+                <NavLink to={backLinkRef.current} className={css.backLink}>⬅ Go back</NavLink>
+                
                 <h1 className={`${css.dishName} ${showDescription ? css.hiddenName : css.visibleName}`}>
                     {dishDetails.name}
                 </h1>

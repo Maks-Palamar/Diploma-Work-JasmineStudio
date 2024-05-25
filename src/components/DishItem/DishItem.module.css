@@ -10,6 +10,25 @@
     padding: 6px;
     padding-bottom: 36px;
     position: relative;
+    transition: 0.5s ease;
+}
+
+.dish::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    border-radius: 8px;
+    filter: blur(0);
+    transition: filter 0.5s ease;
+    z-index: 0;
+}
+
+.dish:hover::before {
+    filter: blur(2.5px);
 }
 
 .name {
@@ -17,6 +36,8 @@
     display: flex;
     text-align: center;
     color: black;
+
+    height: 100%;
 }
 
 .dishDescript {
@@ -65,6 +86,7 @@
 
 .dishLink {
     text-decoration: none;
+    z-index: 1;
 }
 
 /*-------*/
