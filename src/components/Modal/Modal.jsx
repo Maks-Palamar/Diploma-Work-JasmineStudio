@@ -31,7 +31,7 @@ const Modal = () => {
         console.log(cartItemsObject );
         dispatch(makeOrder(cartItemsObject));
         dispatch(modalOrdered(true));
-        dispatch(resetCart());
+        // dispatch(resetCart());
     }
 
     const handleDownloadPDF = () => {

@@ -2,10 +2,12 @@ import React from 'react'
 import css from './DishItem.module.css'
 import { useDispatch } from 'react-redux'
 import { addToCart } from '../../redux/CartSlice/CartSlice'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 const DishItem = ({ data }) => {
     
+  const location = useLocation();
+
     const dispatch = useDispatch()
 
     const handleAdd = () => {
@@ -14,7 +16,7 @@ const DishItem = ({ data }) => {
 
   return (
       <div className={css.dish}  style={{ backgroundImage: `linear-gradient(rgba(238, 237, 221, 0.7), rgba(238, 237, 221, 0.7)), url("${data.image}")` }}>
-          <NavLink to={`/dishpage/${data.id}`} className={css.dishLink}><h3 className={ css.name }>{data.name}</h3></NavLink>
+          <NavLink state={location} to={`/dishpage/${data.id}`} className={css.dishLink}><h3 className={ css.name }>{data.name}</h3></NavLink>
             {/* <p className={css.dishDescript}>{data.description}</p> */}
             <p className={css.dishPrice}>{data.price} <span>$</span></p>
           <button type="button" className={css.addButton} onClick={handleAdd}>Add to cart</button>

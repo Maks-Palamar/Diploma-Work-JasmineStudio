@@ -36,10 +36,15 @@ const Cart = () => {
                       <li key={dish.id} className={css.cartItem}>
                           <div className={css.dishNameWrap}>
                               <p className={css.cartDishName}>{dish.name}</p>
-                              <div className={css.cartButtonsWrap}>
+                              {/* <div className={css.cartButtonsWrap}>
                                   <button type='button' onClick={() => handleRemove(dish)} className={css.cartRemoveBtn}>Remove</button>
                                   <button type='button' onClick={() => handleAdd(dish)} className={css.cartRemoveBtn}>Add</button>
-                              </div>
+                              </div> */}
+                              <div className={css.cartAddRemove}>
+                                    <button type='button' onClick={() => handleRemove(dish)} className={css.cartRemoveBtn}>{'<'}</button>
+                                    {dish.quantity > 0 ? <p className={css.dishQuantity}>{dish.quantity}</p> : <p>0</p>}
+                                    <button type='button' onClick={() => handleAdd(dish)} className={css.cartRemoveBtn}>{'>'}</button>
+                            </div>
                           </div>
                           <div className={css.dishPriceWrap}>
                               <p className={css.cartDishPrice}>{dish.price}$</p>

@@ -50,7 +50,7 @@
 }
 
 .orderBtn {
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     right: 0;
     width: 184px;
@@ -64,4 +64,37 @@
 
     font-family: inherit;
     font-size: 24px;
+    z-index: -1;
+}
+
+.cartAddRemove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    width: calc(100%/2);
+    height: 100%;
+    gap: 48px;
+    /* font-size: 24px; */
+}
+
+.cartRemoveBtn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    transition: 0.3s;
+    color: black;
+    font-family: 'Dance Script', cursive;
+}
+
+.cartRemoveBtn:hover,
+.cartRemoveBtn:active {
+    color: rgba(238, 237, 221, 0.7);
+}
+
+
+.dishQuantity {
+    font-size: 16px;
 }
