@@ -91,3 +91,12 @@ export const fetchOneDish = createAsyncThunk('menu/fetchOneDish', async (dishId,
         return thunkAPI.rejectWithValue(error.message);
     }
 })
+
+export const makeOrder = createAsyncThunk('menu/makeOrder', async (order, thunkAPI) => {
+    try {
+        const response = await instance.post('/Orders', order);
+        return response.data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+    }
+})

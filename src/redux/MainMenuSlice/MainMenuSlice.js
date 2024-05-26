@@ -19,6 +19,7 @@ export const INITIAL_STATE = {
   modal: {
     isOpen: false,
     item: {},
+    isOrdered: false,
 
   }
 }
@@ -119,5 +120,6 @@ export const getIsLoading = state => state.dishes.loading;
 
 export const selectModal = state => state.modal.item;
 export const selectModalOpen = state => state.modal.isOpen;
+export const selectIsOrdered = state => state.modal.isOrdered;
 
 export const dishesReducer = dishesSlice.reducer;

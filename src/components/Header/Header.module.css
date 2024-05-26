@@ -40,7 +40,8 @@ header {
     transition: 500ms;
     left: 0;
     transform-origin: center;
-    fill: rgb(200, 199, 188);
+    /* fill: rgb(200, 199, 188); */
+    fill: black;
 }
 
 .headerMenuIconOpen {
