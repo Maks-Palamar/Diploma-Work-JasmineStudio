@@ -12,21 +12,21 @@ const Footer = () => {
                 <p className={css.footerSocTitle}>Social media</p>
                 <ul className={css.footerSocList}>
                     <li className={css.footerSoc}>
-                        <a href="" className={css.footerSocLink}>
+                        <a href="https://www.instagram.com" className={css.footerSocLink} target="_blank" rel="noreferrer">
                             <svg width="24" height="24" className={css.footerSocIcon}>
                                 <use href="/symbol-defs.svg#icon-instagram-2"></use>
                             </svg>
                         </a>
                     </li>
                     <li className={css.footerSoc}>
-                        <a href="" className={css.footerSocLink}>
+                        <a href="https://x.com" className={css.footerSocLink} target="_blank" rel="noreferrer">
                             <svg width="24" height="24" className={css.footerSocIcon}>
                                 <use href="/symbol-defs.svg#icon-twitter-1-1"></use>
                             </svg>
                         </a>
                     </li>
                     <li className={css.footerSoc}>
-                        <a href="" className={css.footerSocLink}>
+                        <a href="https://facebook.com" className={css.footerSocLink} target="_blank" rel="noreferrer">
                             <svg width="24" height="24" className={css.footerSocIcon}>
                                 <use href="/symbol-defs.svg#icon-facebook-1"></use>
                             </svg>

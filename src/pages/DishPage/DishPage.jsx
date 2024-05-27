@@ -73,21 +73,23 @@ const DishPage = () => {
                     </svg>
               </button>
           </div>
-          <div className={css.dishIngredients}>
-              <div className={css.ingridientsInfo}>
-                  <h3 className={css.ingridientsTitle}>Ingridients:</h3>
-                  <p className={css.ingridientsWeight}>{dishDetails.weight}</p>
+          <div className={css.dishInfo}>
+              <div className={css.dishIngredients}>
+                  <div className={css.ingridientsInfo}>
+                      <h3 className={css.ingridientsTitle}>Ingridients:</h3>
+                      <p className={css.ingridientsWeight}>{dishDetails.weight}</p>
+                  </div>
+                  <ul className={css.ingridientsList}>
+                      {ingredients &&ingredients.map(ingridient => <li key={ingridient}>{ingridient}</li>)}
+                  </ul>
               </div>
-              <ul className={css.ingridientsList}>
-                  {ingredients &&ingredients.map(ingridient => <li key={ingridient}>{ingridient}</li>)}
-              </ul>
-          </div>
-          <div className={css.pricing}>
-              <h3 className={css.dishPrice}>{dishDetails.price}$</h3>
-              <div className={css.cartAddRemove}>
-                    <button type='button' onClick={() => handleRemove(dishDetails)} className={css.cartRemoveBtn}>{'<'}</button>
-                    {cartItem.quantity > 0 ? <p className={css.dishQuantity}>{cartItem.quantity}</p> : <p>0</p>}
-                    <button type='button' onClick={() => handleAdd(dishDetails)} className={css.cartRemoveBtn}>{'>'}</button>
+              <div className={css.pricing}>
+                  <h3 className={css.dishPrice}>Price: <br />{dishDetails.price}$</h3>
+                  <div className={css.cartAddRemove}>
+                        <button type='button' onClick={() => handleRemove(dishDetails)} className={css.cartRemoveBtn}>{'<'}</button>
+                        {cartItem.quantity > 0 ? <p className={css.dishQuantity}>{cartItem.quantity}</p> : <p>0</p>}
+                        <button type='button' onClick={() => handleAdd(dishDetails)} className={css.cartRemoveBtn}>{'>'}</button>
+                  </div>
               </div>
           </div>
             {/* <button onClick={toggleContent} className={css.toggleButton}>Toggle</button> */}
