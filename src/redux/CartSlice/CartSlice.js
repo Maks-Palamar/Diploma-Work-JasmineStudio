@@ -1,5 +1,6 @@
 import { createSlice, createSelector } from "@reduxjs/toolkit";
 import { INITIAL_STATE } from "../MainMenuSlice/MainMenuSlice";
+import { fetchTotalOrders } from "../MainMenuSlice/MainMenuOps";
 // import { selectDishes } from "./MainMenuSlice";
 
 const CartSlice = createSlice({
@@ -54,9 +55,38 @@ const CartSlice = createSlice({
     }
 })
 
+const totalOrderSlice = createSlice({
+    name: "total",
+    initialState: INITIAL_STATE.totalOrders,
+    // reducers: {
+    //     totalOrder: (state, action) => {
+    //         const total = action.payload
+    //         state.total = total.
+    //     }
+    // }
+    extraReducers: builder => {
+        builder
+            .addCase(fetchTotalOrders.pending, state => {
+                state.loading = true;
+            })
+            .addCase(fetchTotalOrders.fulfilled, (state, action) => {
+                const allOrders = action.payload;
+                state.orders = allOrders.length;
+                state.loading = false;
+            })
+            .addCase(fetchTotalOrders.rejected, state => {
+                state.loading = false;
+            })
+    }
+})
+
 export const selectCart = state => state.cart.items;
 export const selectCartTotal = state => state.cart.total;
 export const selectTotalPrice = state => state.cart.totalPrice;
 export const selectTable = state => state.cart.table;
 export const { cartDishes, addToCart, removeFromCart, resetCart, setTable } = CartSlice.actions;
 export const cartReducer = CartSlice.reducer;
+
+export const totalOrderReducer = totalOrderSlice.reducer;
+export const selectTotalOrders = state => state.totalOrders.orders;
+export const { askTotalOrders } = totalOrderSlice.actions;

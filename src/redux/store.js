@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { dishesReducer } from "./MainMenuSlice/MainMenuSlice";
 import { searchReducer } from "./MainMenuSlice/SearchMenuSlice";
-import { cartReducer } from "./CartSlice/CartSlice";
+import { cartReducer, totalOrderReducer } from "./CartSlice/CartSlice";
 import { modalReducer } from "./ModalSlice/ModalSlice";
 
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist'
@@ -22,7 +22,8 @@ export const store = configureStore({
         dishes: dishesReducer,
         search: persistedSearchReducer,
         cart: persistedCartReducer,
-        modal: modalReducer
+        modal: modalReducer,
+        totalOrders: totalOrderReducer,
     },
     middleware: getDefaultMiddleware =>
 		getDefaultMiddleware({

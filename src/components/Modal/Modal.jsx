@@ -1,10 +1,10 @@
 import React from 'react'
 import { selectModal, selectModalOpen, selectIsOrdered } from '../../redux/MainMenuSlice/MainMenuSlice'
-import { selectCart, selectTotalPrice, resetCart, selectTable } from '../../redux/CartSlice/CartSlice'
+import { selectCart, selectTotalPrice, resetCart, selectTable, selectTotalOrders } from '../../redux/CartSlice/CartSlice'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { modalClose, modalOpen, modalOrdered } from '../../redux/ModalSlice/ModalSlice'
-import { makeOrder } from '../../redux/MainMenuSlice/MainMenuOps'
+import { makeOrder, fetchTotalOrders } from '../../redux/MainMenuSlice/MainMenuOps'
 import jsPDF from 'jspdf'
 import css from './Modal.module.css'
 
@@ -17,6 +17,7 @@ const Modal = () => {
     console.log(cartItems);
     const total = useSelector(selectTotalPrice);
     const isOrdered = useSelector(selectIsOrdered);
+    const totalOrders = useSelector(selectTotalOrders);
 
     const cartItemsObject = cartItems.reduce((obj, item, index) => {
         obj[index] = item;
@@ -32,6 +33,7 @@ const Modal = () => {
         console.log(cartItemsObject );
         dispatch(makeOrder({ ...cartItemsObject, table: table }));
         dispatch(modalOrdered(true));
+        dispatch(fetchTotalOrders());
         // dispatch(resetCart());
     }
 
@@ -58,6 +60,8 @@ const Modal = () => {
     // Add order items
     doc.setFontSize(12);
     doc.setFont('helvetica', 'normal');
+    doc.text(`Order number ${totalOrders + 1}`, 10, y);
+    y += 10;
     doc.text(`Table: ${table}`, 10, y);
     y += 10;
     cartItems.forEach((item, index) => {
@@ -89,7 +93,7 @@ const Modal = () => {
                         <ul className={css.billList}>
                             {cartItems.map(item => (
                                 <li key={item.id} className={css.billItem}>
-                                    {item.name} x {item.quantity} - ${item.price * item.quantity}
+                                    {item.name} x {item.quantity} - ${(item.price * item.quantity).toFixed(2) }
                                 </li>
                             ))}
                         </ul>

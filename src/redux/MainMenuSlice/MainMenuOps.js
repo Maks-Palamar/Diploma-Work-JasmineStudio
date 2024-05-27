@@ -100,3 +100,12 @@ export const makeOrder = createAsyncThunk('menu/makeOrder', async (order, thunkA
         return thunkAPI.rejectWithValue(error.message);
     }
 })
+
+export const fetchTotalOrders = createAsyncThunk('bill/fetchTotalOrders', async (_, thunkAPI) => {
+    try { 
+        const response = await instance.get('/Orders');
+        return response.data;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error.message);
+    }
+})

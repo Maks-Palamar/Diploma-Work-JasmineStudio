@@ -22,6 +22,9 @@ export const INITIAL_STATE = {
     item: {},
     isOrdered: false,
 
+  },
+  totalOrders: {
+    orders: 0,
   }
 }
 
