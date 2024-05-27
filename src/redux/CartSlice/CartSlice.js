@@ -47,6 +47,9 @@ const CartSlice = createSlice({
             state.items = [];
             state.total = 0;
             state.totalPrice = 0;
+        },
+        setTable (state, action) {
+            state.table = action.payload
         }
     }
 })
@@ -54,5 +57,6 @@ const CartSlice = createSlice({
 export const selectCart = state => state.cart.items;
 export const selectCartTotal = state => state.cart.total;
 export const selectTotalPrice = state => state.cart.totalPrice;
-export const { cartDishes, addToCart, removeFromCart, resetCart } = CartSlice.actions;
+export const selectTable = state => state.cart.table;
+export const { cartDishes, addToCart, removeFromCart, resetCart, setTable } = CartSlice.actions;
 export const cartReducer = CartSlice.reducer;

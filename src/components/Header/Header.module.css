@@ -76,6 +76,33 @@ header {
     margin-top: 20px;
 }
 
+.tableSelection {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tablesLabel {
+    font-size: 32px
+}
+
+.tables {
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    background-color: white;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 8px;
+    color: black;
+    font-family: 'Dancing Script', cursive;
+}
+
 /* .orderBtn {
     position: absolute;
     bottom: 0;

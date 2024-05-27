@@ -14,7 +14,8 @@ export const INITIAL_STATE = {
   cart: {
     items: [],
     total: 0,
-    totalPrice: 0
+    totalPrice: 0,
+    table: '',
   },
   modal: {
     isOpen: false,
