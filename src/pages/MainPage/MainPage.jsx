@@ -9,15 +9,16 @@ import { fetchMenu } from '../../redux/MainMenuSlice/MainMenuOps';
 // import Filters from '../../components/Filters/Filters';
 // import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer';
+import css from './MainPage.module.css'
 
 const MainPage = () => {
 
   return (
     <div>
-          <h1>MENU</h1>
+          <h1 className={css.title}>MENU</h1>
           <SearchBox />
           <MenuList />
-          <Footer />
+          {/* <Footer /> */}
     </div>
   )
 }

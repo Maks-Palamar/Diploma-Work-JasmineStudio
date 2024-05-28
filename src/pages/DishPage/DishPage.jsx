@@ -57,7 +57,7 @@ const DishPage = () => {
     console.log(dishDetails);
     
   return (
-      <div >
+      <div className={css.dishPage}>
           <div className={`${css.dishHero} ${showDescription && css.heroImgRight}`} style={{ backgroundImage: `linear-gradient(rgba(238, 237, 221, 0.7), rgba(238, 237, 221, 0.7)), url("${dishDetails.image}")` }}>
                 <NavLink to={backLinkRef.current} className={css.backLink}>⬅ Go back</NavLink>
                 

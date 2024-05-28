@@ -13,7 +13,9 @@ import DishPage from './pages/DishPage/DishPage'
 import Modal from './components/Modal/Modal'
 import { selectModalOpen } from './redux/MainMenuSlice/MainMenuSlice'
 import { useSelector } from 'react-redux'
-
+import HelloPage from './pages/HelloPage/HelloPage'
+import Navigation from './components/Navigation/Navigation'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -22,19 +24,21 @@ function App() {
   return (
     <>
       <Header />
+      <Navigation />
       <Suspense fallback={<Loader />}>
         <Routes>
             {/* <Switch > */}
-            <Route path="/category/:categoryName" element={<MainPage />} />
-            <Route path="/" element={<MainPage />}/>
-            <Route path='/dishpage/:id' element={<DishPage />} />
+            <Route path="/menu/category/:categoryName" element={<MainPage />} />
+            <Route path="/menu" element={<MainPage />}/>
+            <Route path='/' element={<HelloPage />} />
+            <Route path='/menu/category/:categoryName/dishpage/:id' element={<DishPage />} />
             
               {/* <Route path="*" element={<NotFound/>}/> */}
             {/* </Switch> */}
         </Routes>
       </Suspense>
       {modalOpen && <Modal />}
-      {/* <Footer /> */}
+      <Footer />
     </>
   )
 }

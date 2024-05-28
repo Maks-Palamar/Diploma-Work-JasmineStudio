@@ -4,6 +4,10 @@
     background-position-y: center;
 } */
 
+.dishPage {
+    margin-top: 50px;
+}
+
 .dishHero {
     position: relative;
     width: 100%;

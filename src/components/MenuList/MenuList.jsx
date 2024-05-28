@@ -38,13 +38,16 @@ const MenuList = () => {
     }
   }, [dispatch, categoryName]);
 
+  console.log(categoryName);
+
   return (
     <div className={css.menuSection}>
       <Filters />
+      <h1>{categoryName}</h1>
       {isLoading ? <Loader /> :
         <ul className={css.menu}>
           {filteredDishes && filteredDishes.map(dish =>
-            <li key={dish.id} ><DishItem data={dish} /></li>
+            <li key={dish.id} ><DishItem data={dish} category={categoryName}/></li>
           )}
         </ul>}
     </div>
