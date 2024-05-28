@@ -106,7 +106,7 @@ const Banner = () => {
                 {filteredTopDishes.map((topDish, index) => (
                     topDish && (
                         <div className={css.bannerImage} key={index} style={{ backgroundImage:  `linear-gradient(rgba(238, 237, 221, 0.7), rgba(238, 237, 221, 0.7)), url(${topDish.image})` }}>
-                            <NavLink to={`/dishpage/${topDish.id}`} className={css.bannerLink} key={index}>
+                            <NavLink to={`/menu/category/${topDish.type}/dishpage/${topDish.id}`} className={css.bannerLink} key={index}>
                                 <h2>{topDish.name}</h2>
                             </NavLink>
                         </div>

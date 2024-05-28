@@ -54,4 +54,5 @@ const MenuList = () => {
   )
 }
 
+// export const categoryName = useParams();
 export default MenuList
