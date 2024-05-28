@@ -17,6 +17,7 @@ const MenuList = () => {
   
   const dispatch = useDispatch();
   const { categoryName } = useParams();
+  console.log(categoryName);
 
   const isLoading = useSelector(getIsLoading);
   // const error = useSelector(getIsError);
@@ -54,5 +55,4 @@ const MenuList = () => {
   )
 }
 
-// export const categoryName = useParams();
 export default MenuList

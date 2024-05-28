@@ -10,7 +10,7 @@ const link = ({isActive}) => clsx(css.navLink, {[css.navLinkActive]: isActive,})
   return (
       <div className={css.nav}>
           <NavLink to="/" className={link}>Home</NavLink>
-          <NavLink to="/menu" className={link}>Menu</NavLink>
+          <NavLink to="/menu/category/all" className={link}>Menu</NavLink>
           <NavLink to="/about" className={link}>About</NavLink>
           {/* <NavLink to="/contacts" className={css.navLink}>Contacts</NavLink> */}
     </div>

@@ -10,7 +10,7 @@ const Filters = () => {
   return (
     // <div>
       <ul className={css.navList}>
-        <li className={css.linkItem}><NavLink to="/menu" className={link}>All</NavLink></li>
+        <li className={css.linkItem}><NavLink to="/menu/category/all" className={link}>All</NavLink></li>
         <li className={css.linkItem}><NavLink to="/menu/category/cakes" className={link}>Cakes</NavLink></li>
         <li className={css.linkItem}><NavLink to="/menu/category/pastries" className={link}>Pastries</NavLink></li>
         <li className={css.linkItem}><NavLink to="/menu/category/cold-dishes" className={link}>Coldies</NavLink></li>
