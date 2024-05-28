@@ -25,14 +25,18 @@ const Header = () => {
 
       useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search);
-        const table = urlParams.get('table');
-        if (table) {
-            dispatch(setTable(table));
+        const gotTable = urlParams.get('table');
+        if (gotTable) {
+            dispatch(setTable(gotTable));
         }
-    }, [dispatch]);
+
+        const currentUrl = window.location.href.split('?')[0];
+        const newUrl = `${currentUrl}?table=${table}`;
+        window.history.pushState({ path: newUrl }, '', newUrl);
+    }, [dispatch, table]);
 
     const updateURLWithTableNumber = (newTable) => {
-        const currentURL = window.location.href.split('?')[0]; // Get the base URL without parameters
+        const currentURL = window.location.href.split('?')[0];
         const newURL = `${currentURL}?table=${newTable}`;
         window.history.pushState({ path: newURL }, '', newURL);
     };
