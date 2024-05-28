@@ -15,7 +15,9 @@ import { selectModalOpen } from './redux/MainMenuSlice/MainMenuSlice'
 import { useSelector } from 'react-redux'
 import HelloPage from './pages/HelloPage/HelloPage'
 import Navigation from './components/Navigation/Navigation'
+import AboutPage from './pages/AboutPage/AboutPage'
 import Footer from './components/Footer/Footer'
+
 
 function App() {
 
@@ -32,6 +34,7 @@ function App() {
             <Route path="/menu" element={<MainPage />}/>
             <Route path='/' element={<HelloPage />} />
             <Route path='/menu/category/:categoryName/dishpage/:id' element={<DishPage />} />
+            <Route path='/about' element={<AboutPage />} />
             
               {/* <Route path="*" element={<NotFound/>}/> */}
             {/* </Switch> */}

@@ -39,15 +39,24 @@
 }
 
 .tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     /* width: calc((100%/2) - 8px); */
     background-color: rgb(238, 237, 221);
     border-radius: 8px;
     padding: 32px;
-    height: 300px;
+    width: 100%;
+    min-height: 300px;
 }
 
 @media screen and (min-width: 768px) {
     .tile {
+
         width: calc((100%/2) - 8px);
+    /* height: calc((100%/2) - 8px); */
+    height: 100%;
+    height: 400px;
     }
 }
