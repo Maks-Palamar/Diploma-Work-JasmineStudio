@@ -30,9 +30,9 @@ const Header = () => {
             dispatch(setTable(gotTable));
         }
 
-        const currentUrl = window.location.href.split('?')[0];
-        const newUrl = `${currentUrl}?table=${table}`;
-        window.history.pushState({ path: newUrl }, '', newUrl);
+        // const currentUrl = window.location.href.split('?')[0];
+        // const newUrl = `${currentUrl}?table=${table}`;
+        // window.history.pushState({ path: newUrl }, '', newUrl);
     }, [dispatch, table]);
 
     const updateURLWithTableNumber = (newTable) => {
