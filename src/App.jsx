@@ -31,7 +31,7 @@ function App() {
         <Routes>
             {/* <Switch > */}
             <Route path="/menu/category/:categoryName" element={<MainPage />} />
-            {/* <Route path="/menu/category/all" element={<MainPage />}/> */}
+            <Route path="/menu/category/all" element={<MainPage />}/>
             <Route path='/' element={<HelloPage />} />
             <Route path='/menu/category/:categoryName/dishpage/:id' element={<DishPage />} />
             <Route path='/about' element={<AboutPage />} />
