@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import MainPage from './pages/MainPage/MainPage'
+// import MainPage from './pages/MainPage/MainPage'
 import './App.css'
 import Header from './components/Header/Header'
 import { Route, Routes } from 'react-router-dom'
@@ -9,16 +9,19 @@ import { Route, Routes } from 'react-router-dom'
 import { Suspense, lazy } from 'react'
 import Loader from './components/Loader/Loader'
 // import Footer from './components/Footer/Footer'
-import DishPage from './pages/DishPage/DishPage'
+// import DishPage from './pages/DishPage/DishPage'
 import Modal from './components/Modal/Modal'
 import { selectModalOpen } from './redux/MainMenuSlice/MainMenuSlice'
 import { useSelector } from 'react-redux'
-import HelloPage from './pages/HelloPage/HelloPage'
+// import HelloPage from './pages/HelloPage/HelloPage'
 import Navigation from './components/Navigation/Navigation'
-import AboutPage from './pages/AboutPage/AboutPage'
+// import AboutPage from './pages/AboutPage/AboutPage'
 import Footer from './components/Footer/Footer'
 
-
+const HelloPage = lazy(() => import('./pages/HelloPage/HelloPage'))
+const AboutPage = lazy(() => import('./pages/AboutPage/AboutPage'))
+const DishPage = lazy(() => import('./pages/DishPage/DishPage'))
+const MainPage = lazy(() => import('./pages/MainPage/MainPage'))
 function App() {
 
   const modalOpen = useSelector(selectModalOpen);
