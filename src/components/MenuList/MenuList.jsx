@@ -12,16 +12,12 @@ import { getIsLoading} from '../../redux/MainMenuSlice/MainMenuSlice'
 import Loader from '../Loader/Loader'
 
 const MenuList = () => {
-
   const filteredDishes = useSelector(selectFilteredDishes)
-  
   const dispatch = useDispatch();
   const { categoryName } = useParams();
-  console.log(categoryName);
 
   const isLoading = useSelector(getIsLoading);
-  // const error = useSelector(getIsError);
-
+  
   useEffect(() => {
     if (categoryName === 'cakes') {
       dispatch(fetchCakes());
@@ -39,8 +35,6 @@ const MenuList = () => {
     }
   }, [dispatch, categoryName]);
 
-  console.log(categoryName);
-
   return (
     <div className={css.menuSection}>
       <Filters />
@@ -54,5 +48,4 @@ const MenuList = () => {
     </div>
   )
 }
-
 export default MenuList

@@ -115,6 +115,15 @@ main {
   padding-bottom: 56px;
 }
 
+input,
+textarea,
+button,
+select,
+a,
+.navUL li NavLink {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* a {
   font-weight: 500;
   color: #646cff;
