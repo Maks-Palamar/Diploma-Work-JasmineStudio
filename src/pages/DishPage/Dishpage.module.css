@@ -90,7 +90,7 @@
 .dishInfo {
     display: flex;
     flex-direction: column;
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
 }
 
 .dishIngredients {
@@ -186,11 +186,13 @@
     font-family: 'Dance Script', cursive;
 }
 
-.cartRemoveBtn:hover,
-.cartRemoveBtn:active {
+.cartRemoveBtn:hover {
     color: white;
 }
 
+.cartRemoveBtn:active {
+    color: white;
+}
 
 .dishQuantity {
     font-size: 24px;
