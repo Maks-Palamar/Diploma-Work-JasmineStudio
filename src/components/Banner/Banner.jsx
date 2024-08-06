@@ -9,6 +9,9 @@ const Banner = () => {
     const dispatch = useDispatch();
     const allDishes = useSelector(selectDishes);
 
+    const [touchStartX, setTouchStartX] = useState(0);
+    const [touchEndX, setTouchEndX] = useState(0);
+
     useEffect(() => {
         dispatch(fetchMenu());
     }, [dispatch]);
@@ -95,18 +98,16 @@ const Banner = () => {
 
     const filteredTopDishes = topDishes.filter(dish => dish !== null);
 
-    // const [touchstartX, setTouchstartX] = useState(0);
-    // const [touchendX, setTouchendX] = useState(0);
+ 
   
-    // const handleTouchStart = (e) => {
-    //   setTouchstartX(e.changedTouches[0].screenX);
-    //   handleNext();
-    // };
+
+    const handleTouchStart = (e) => {
+      setTouchStartX(e.changedTouches[0].screenX);
+    };
   
-    // const handleTouchEnd = (e) => {
-    //   setTouchendX(e.changedTouches[0].screenX);
-    //   handlePrev();
-    // };
+    const handleTouchEnd = (e) => {
+      setTouchEndX(e.changedTouches[0].screenX);
+    };
 
     return (
         <div className={css.banner}>
@@ -118,8 +119,8 @@ const Banner = () => {
                 {filteredTopDishes.map((topDish, index) => (
                     topDish && (
                         <div className={css.bannerImage} key={index} style={{ backgroundImage:  `linear-gradient(rgba(238, 237, 221, 0.7), rgba(238, 237, 221, 0.7)), url(${topDish.image})` }}
-                        onTouchStart={handleNext}
-                        onTouchEnd={handlePrev}
+                        onTouchStart={handleTouchStart}
+                        onTouchEnd={handleTouchEnd}
                           >
                             <NavLink to={`/menu/category/${topDish.type}/dishpage/${topDish.id}`} className={css.bannerLink} key={index}>
                                 <h2>{topDish.name}</h2>
