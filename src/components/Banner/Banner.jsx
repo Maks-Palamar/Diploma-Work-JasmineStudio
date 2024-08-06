@@ -95,6 +95,18 @@ const Banner = () => {
 
     const filteredTopDishes = topDishes.filter(dish => dish !== null);
 
+    // const [touchstartX, setTouchstartX] = useState(0);
+    // const [touchendX, setTouchendX] = useState(0);
+  
+    // const handleTouchStart = (e) => {
+    //   setTouchstartX(e.changedTouches[0].screenX);
+    //   handleNext();
+    // };
+  
+    // const handleTouchEnd = (e) => {
+    //   setTouchendX(e.changedTouches[0].screenX);
+    //   handlePrev();
+    // };
 
     return (
         <div className={css.banner}>
@@ -105,7 +117,10 @@ const Banner = () => {
             >
                 {filteredTopDishes.map((topDish, index) => (
                     topDish && (
-                        <div className={css.bannerImage} key={index} style={{ backgroundImage:  `linear-gradient(rgba(238, 237, 221, 0.7), rgba(238, 237, 221, 0.7)), url(${topDish.image})` }}>
+                        <div className={css.bannerImage} key={index} style={{ backgroundImage:  `linear-gradient(rgba(238, 237, 221, 0.7), rgba(238, 237, 221, 0.7)), url(${topDish.image})` }}
+                        onTouchStart={handleNext}
+                        onTouchEnd={handlePrev}
+                          >
                             <NavLink to={`/menu/category/${topDish.type}/dishpage/${topDish.id}`} className={css.bannerLink} key={index}>
                                 <h2>{topDish.name}</h2>
                             </NavLink>

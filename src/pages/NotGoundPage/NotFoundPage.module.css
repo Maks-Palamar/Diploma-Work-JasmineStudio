@@ -1,0 +1,15 @@
+.lostCaption {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 20px;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.navLinkHome {
+    text-decoration: none;
+    color: rgb(200, 199, 188);
+}

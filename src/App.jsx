@@ -13,6 +13,7 @@ const HelloPage = lazy(() => import('./pages/HelloPage/HelloPage'))
 const AboutPage = lazy(() => import('./pages/AboutPage/AboutPage'))
 const DishPage = lazy(() => import('./pages/DishPage/DishPage'))
 const MainPage = lazy(() => import('./pages/MainPage/MainPage'))
+const NotFound = lazy(() => import('./pages/NotGoundPage/NotFoundPage'))
 function App() {
 
   const modalOpen = useSelector(selectModalOpen);
@@ -25,12 +26,12 @@ function App() {
         <Routes>
             {/* <Switch > */}
             <Route path="/menu/category/:categoryName" element={<MainPage />} />
-            <Route path="/menu/category/all" element={<MainPage />}/>
+            <Route path="/menu/category" element={<MainPage />}/>
             <Route path='/' element={<HelloPage />} />
             <Route path='/menu/category/:categoryName/dishpage/:id' element={<DishPage />} />
             <Route path='/about' element={<AboutPage />} />
             
-              {/* <Route path="*" element={<NotFound/>}/> */}
+              <Route path="*" element={<NotFound/>}/>
             {/* </Switch> */}
         </Routes>
       </Suspense>

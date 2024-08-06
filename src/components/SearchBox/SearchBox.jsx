@@ -2,6 +2,7 @@
 // import searchContact from '../../redux/contactsSlice/contactsSlice';
 import { searchDishes, selectSearch } from '../../redux/MainMenuSlice/SearchMenuSlice';
 import { useDispatch, useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 import css from './SearchBox.module.css'
 
 const SearchBox = () => {
@@ -9,9 +10,15 @@ const SearchBox = () => {
     const dispatch = useDispatch();
 
     const value = useSelector( selectSearch );
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const onChange = (newvalue) => {
         dispatch(searchDishes(newvalue))
+        if (newvalue === '') {
+            setSearchParams({})
+        } else {
+            setSearchParams({ query: newvalue })
+        }
     }
     
     return (
