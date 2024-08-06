@@ -38,16 +38,14 @@ const Modal = () => {
     }
 
     const handleDownloadPDF = () => {
-
     const doc = new jsPDF();
     const lineSeparator = '========================';
     const itemSeparator = '------------------------';
 
     const restaurantName = 'JASMINE STUDIO';
 
-    let y = 10; // Initial y coordinate for text
+    let y = 10; 
 
-    // Add restaurant name
     doc.setFontSize(16);
     doc.setFont('helvetica', 'bold');
     doc.text(lineSeparator, 10, y);
@@ -57,7 +55,6 @@ const Modal = () => {
     doc.text(lineSeparator, 10, y);
     y += 20;
 
-    // Add order items
     doc.setFontSize(12);
     doc.setFont('helvetica', 'normal');
     doc.text(`Order number ${totalOrders + 1}`, 10, y);
@@ -69,17 +66,14 @@ const Modal = () => {
         y += 10;
     });
 
-    // Add item separator
     y += 10;
     doc.text(itemSeparator, 10, y);
     y += 10;
 
-    // Add total price
     doc.setFontSize(14);
     doc.setFont('helvetica', 'bold');
     doc.text(`TOTAL: $${total.toFixed(2)}`, 10, y);
 
-    // Save the PDF
     doc.save('order.pdf');
     };
 
