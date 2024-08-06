@@ -103,12 +103,20 @@ const Banner = () => {
 
     const handleTouchStart = (e) => {
       setTouchStartX(e.changedTouches[0].screenX);
-      handleNext();
     };
   
     const handleTouchEnd = (e) => {
       setTouchEndX(e.changedTouches[0].screenX);
-      handlePrev();
+      checkSwipe();
+    };
+
+    const checkSwipe = () => {
+        const swipeThreshold = 50;
+        if (touchStartX - touchEndX > swipeThreshold) {
+            handleNext();
+        } else if (touchEndX - touchStartX > swipeThreshold) {
+            handlePrev();
+        }
     };
 
     return (
