@@ -11,6 +11,9 @@ import { selectCart } from '../../redux/CartSlice/CartSlice'
 
 const DishPage = () => {
 
+    const [touchStartX, setTouchStartX] = useState(0);
+    const [touchEndX, setTouchEndX] = useState(0);
+
     const dishId = useParams();
     console.log(dishId.id);
     const location = useLocation();
@@ -38,7 +41,6 @@ const DishPage = () => {
         return () => clearInterval(interval);
     }, []);
 
-    // Функція для ручного перемикання
     const toggleContent = () => {
         setShowDescription(prevShowDescription => !prevShowDescription);
     };
@@ -55,10 +57,30 @@ const DishPage = () => {
     const cartItem = cartDishes.find(item => item.id === dishDetails.id) || {};
     console.log(ingredients);
     console.log(dishDetails);
+
+
+    const handleTouchStart = (e) => {
+        setTouchStartX(e.changedTouches[0].screenX);
+      };
+    
+      const handleTouchEnd = (e) => {
+        setTouchEndX(e.changedTouches[0].screenX);
+        checkSwipe();
+      };
+  
+      const checkSwipe = () => {
+          const swipeThreshold = 50;
+          if (touchStartX - touchEndX > swipeThreshold) {
+              toggleContent();
+          } else if (touchEndX - touchStartX > swipeThreshold) {
+              toggleContent();
+          }
+      };
     
   return (
       <div className={css.dishPage}>
-          <div className={`${css.dishHero} ${showDescription && css.heroImgRight}`} style={{ backgroundImage: `linear-gradient(rgba(238, 237, 221, 0.7), rgba(238, 237, 221, 0.7)), url("${dishDetails.image}")` }}>
+          <div className={`${css.dishHero} ${showDescription && css.heroImgRight}`} style={{ backgroundImage: `linear-gradient(rgba(238, 237, 221, 0.7), rgba(238, 237, 221, 0.7)), url("${dishDetails.image}")` }}
+          onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
                 <NavLink to={backLinkRef.current} className={css.backLink}>⬅ Go back</NavLink>
                 
                 <h1 className={`${css.dishName} ${showDescription ? css.hiddenName : css.visibleName}`}>
