@@ -103,10 +103,12 @@ const Banner = () => {
 
     const handleTouchStart = (e) => {
       setTouchStartX(e.changedTouches[0].screenX);
+      handleNext();
     };
   
     const handleTouchEnd = (e) => {
       setTouchEndX(e.changedTouches[0].screenX);
+      handlePrev();
     };
 
     return (
