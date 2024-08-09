@@ -15,7 +15,7 @@ const DishPage = () => {
     const [touchEndX, setTouchEndX] = useState(0);
 
     const dishId = useParams();
-    console.log(dishId.id);
+    // console.log(dishId.id);
     const location = useLocation();
     const backLinkRef = useRef(location.state ?? "/");
 
@@ -45,7 +45,7 @@ const DishPage = () => {
         setShowDescription(prevShowDescription => !prevShowDescription);
     };
     const handleAdd = (dish) => {
-        console.log('dish', dish);
+        // console.log('dish', dish);
         dispatch( addToCart(dish) )
     }
     
@@ -55,8 +55,8 @@ const DishPage = () => {
 
     const ingredients = dishDetails.ingredients;
     const cartItem = cartDishes.find(item => item.id === dishDetails.id) || {};
-    console.log(ingredients);
-    console.log(dishDetails);
+    // console.log(ingredients);
+    // console.log(dishDetails);
 
 
     const handleTouchStart = (e) => {

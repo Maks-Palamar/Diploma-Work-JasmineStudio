@@ -34,13 +34,13 @@ const Banner = () => {
             topOrderedDishes[type] = sortedDishes[0];
         });
 
-        console.log(topOrderedDishes);
+        // console.log(topOrderedDishes);
         return topOrderedDishes;
     };
 
     const topOrderedDishes = allDishes && allDishes.length ? getTopOrderedImagesByType(allDishes) : {};
 
-    console.log(topOrderedDishes);
+    // console.log(topOrderedDishes);
 
     const topCake = topOrderedDishes['cakes'] || null;
     const topPastry = topOrderedDishes['pastries'] || null;
@@ -57,7 +57,7 @@ const Banner = () => {
     const images = [cakeImage, pastryImage, coldDishImage, tartImage, drinkImage];
     const topDishes = [topCake, topPastry, topColdDish, topTart, topDrink];
 
-    console.log(topDishes);
+    // console.log(topDishes);
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const timeoutRef = useRef(null);
